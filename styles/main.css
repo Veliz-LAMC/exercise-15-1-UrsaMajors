@@ -137,6 +137,11 @@ article img {
 	float: right;
 	margin: .5em 0 1em 1em;
 	border: 1px solid black;
+	transition: transform 3s ease;
+}
+article img:hover{
+	transform: rotate(720deg);
+	transform-origin: top left;
 }
 
 /* the styles for the aside */
@@ -155,15 +160,30 @@ aside h3 {
 	font-size: 105%;
 	padding-bottom: .25em;
 }
-aside img {
-	padding-bottom: 1em;
+	aside img {
+		padding-bottom: 1em;
+		transition: transform 2.0s ease-out;
+		animation: moveandscale 3s ease-in-out 2s 2 alternate;
+	
+	}
+@keyframes moveandscale {
+	0%{
+		transform: translate(0, 0) scale(1);
+	}
+	100%{
+		transform: translate(100px, 20px) scale(1.4);
+	}
 }
 
+	aside img:hover {
+		transform: translate(100px, 20px);
+	}
+	
 /* the styles for the footer */
 footer {
 	background-color: #931420;
 	clear: both;
-
+	
 }
 footer p {
 	text-align: center;
